@@ -36,7 +36,7 @@
 namespace openvpn {
   inline std::string get_password(const char *prompt)
   {
-#if !defined(OPENVPN_PLATFORM_WIN)
+#if 0
     char *ret = getpass(prompt);
     return ret;
 #else
