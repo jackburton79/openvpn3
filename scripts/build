@@ -178,7 +178,11 @@ else
 	LIBS="$LIBS -lcrypto -lssl"
     elif [ "$NOSSL" != "1" ]; then
 	CPPFLAGS="$CPPFLAGS -DUSE_OPENSSL"
-	LIBS="$LIBS -lssl -lcrypto -ldl"
+	if  [ "$PLATFORM" == "haiku" ]; then
+		LIBS="$LIBS -lssl -lcrypto -lnetwork"
+	else
+		LIBS="$LIBS -lssl -lcrypto -ldl"
+	fi
     fi
 fi
 if [ "$OPENSSL_SYS" != "1" ] && [ "$OPENSSL_LINK" != "1" ] && [ "$NOSSL" != "1" ]; then
