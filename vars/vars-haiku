@@ -1,4 +1,3 @@
-export JAVA_DIR=/usr/lib/jvm/java-7-openjdk-amd64
 [ -z "$DEP_DIR" ] && export DEP_DIR=$HOME/linux
 export PLATFORM=haiku
 export DEBUG_BUILD=0
